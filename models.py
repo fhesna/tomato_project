@@ -31,7 +31,7 @@ class TomatoModel(tf.keras.Model):
 
     inputs = tf.keras.Input(shape=(256,256,3))
     x = base_model(inputs, training=self.finetune)
-    x = tf.keras.layers.GlobalAveragePooling()(x)
+    x = tf.keras.layers.GlobalAveragePooling2D()(x)
     x = tf.keras.layers.Dropout(0.2)(x)
     outputs = tf.keras.layers.Dense(self.classes, activation="softmax")(x)
 
