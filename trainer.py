@@ -16,6 +16,6 @@ class Trainer:
         history = self.model.fit(train_data, 
                                  validation_data=validation_data, 
                                  epochs=self.epoch,                                 
-                                 callbacks=[tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)]
+                                 callbacks=[tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=7, restore_best_weights=True)]
 )
         return history
